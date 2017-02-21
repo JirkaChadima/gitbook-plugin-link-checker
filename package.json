@@ -1,0 +1,28 @@
+{
+  "name": "gitbook-plugin-link-fixer",
+  "version": "1.0.0",
+  "description": "Plugin that adds a backslash to relative links",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mackiovello/plugin-link-fixer.git"
+  },
+  "author": "Mackiovello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mackiovello/plugin-link-fixer/issues"
+  },
+  "homepage": "https://github.com/Mackiovello/plugin-link-fixer#readme",
+  "gitbook": {
+    "properties": {
+      "link": {
+        "type": "string",
+        "default": "",
+        "title": "The base URL to the book"    
+      }
+    }
+  }
+}
