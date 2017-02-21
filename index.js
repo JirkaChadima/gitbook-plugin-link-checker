@@ -4,10 +4,5 @@ module.exports = {
         js: [
             "plugin.js"
         ]
-    },
-    hooks: {
-        "finish": function(){
-            console.log("FINISH!");
-        }
     }
 }
