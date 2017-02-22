@@ -1,5 +1,5 @@
 require(["gitbook"], function(gitbook) {
-    gitbook.push(function() {
+    gitbook.events.bind("page.change", function() {
       var links = document.querySelectorAll(".page-inner a");
       for(var i = 0; i < links.length; i++){
         var path = links[i].href;
