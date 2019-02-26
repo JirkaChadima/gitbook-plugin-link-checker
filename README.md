@@ -1,18 +1,22 @@
-# plugin-link-fixer
-
-Fixes a [GitBook issue](https://github.com/GitbookIO/gitbook/issues/1708) where the trailing backslash is not included with relative links.
+# gitbook-plugin-link-checker
 
 To add this plugin, enter the following the `book.json` file:
 
+Options:
+
+- `fqdn` - List of domains that the checker should check. If any of those occur in a link, it's bad.
+- `dieOnError` - If set to true, the build will stop, otherwise the plugin will flush only warnings
+
 ```json
 {
-    "plugins": [ "link-fixer" ],
+    "plugins": [ "link-checker" ],
     "pluginsConfig": {
-        "link-fixer": {
-            "link": "https://www.baseurl.com/"
+        "link-checker": {
+            "fqdn": [
+              "developers.windingtree.com"
+            ],
+            "dieOnError": false
         }
     }
 }
 ```
-
-The `link` option should be set as the base uri of your site.

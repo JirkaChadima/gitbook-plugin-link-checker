@@ -1,22 +1,27 @@
 {
-  "name": "gitbook-plugin-link-fixer",
-  "version": "0.0.3",
-  "description": "Plugin that adds a backslash to relative links",
+  "name": "gitbook-plugin-link-checker",
+  "version": "0.0.0",
+  "description": "Plugin that checks for dead or absolute links",
   "main": "index.js",
   "engines": {
     "gitbook": ">3.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mackiovello/plugin-link-fixer.git"
+    "url": "git+https://github.com/jirkachadima-gitbook-plugin-link-checker.git"
   },
   "license": "MIT",
   "gitbook": {
     "properties": {
-      "link": {
-        "type": "string",
-        "default": "",
-        "title": "The base URL to the book"    
+      "fqdn": {
+        "type": "array",
+        "default": "[]",
+        "description": "List of domains that the checker should check. If any of those occur in a link, it's bad."
+      },
+      "dieOnError": {
+        "type": "boolean",
+        "default": "false",
+        "description": "If set to true, the build will stop, otherwise the plugin will flush only warnings"
       }
     }
   }
