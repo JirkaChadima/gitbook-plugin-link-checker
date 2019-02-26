@@ -16,3 +16,6 @@ jobs:
       on:
         repo: jirkachadima/gitbook-plugin-link-checker
         tags: true
+env:
+  global:
+    secure: ggyH64YD/Os51QOKcDtzZzO4X3MnE86vEsH2Wv2XwSHv5ayzB/PwvyKcM/h7Q0F6pXa4FXBQ+VvZmGIJD7kKaJaaGSO3QiKK77IWiIUqoIBn+noexzin54AyDZ8FmQM+d/tuwM7c7Wk3RlfxcV/VNOaI/rlydg90V0ggcZRTVB+LkZq2q4gM/L6Lx+g67m+IFvEVw5VylbpJ6nNQL0O4mgycobpsEqoSvSZLPHDsj4ThqAxxUoKvxhAeWCmUnB5uARBv0vNDWAxg7Kk7cpiaG1vAGRwJhdSTkMlUlA+HaQ23WV7MBdrE5dAxMgqzdbC5/t0Rg9lxrZHSdBPbENU7ENiq+AXf67XJa+NHpHcxqXx3LszlUJk54uI6Jcf6ds0uYlashyQoJ//ak2aGEe5U6sD3rkol+P4TJGVeBhh9BDL2HeqF07Lvg60JIlvkVoqL+TTNsau6Xh9s82h650kv/pI1kQUu5RsSpA3D66NHTHzrPCtueF4ZFYmQ7UpWIObx5gY+gPnjSQl4G25kL3s/ohWEcdNYLL+D5+inj+5y06q33x6dhog/B5Jk1vXJexkvpi+BGfsqRK9K3MmwLJSWsFspl+3w50Yoq2VF3n/XAaw9bqmSsAHHv6iirY5BkrHxxGm5fikQ5mxCuAnlacQS+rUjhmBSWbB90vHKQ44AB0E=
