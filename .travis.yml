@@ -14,7 +14,7 @@ jobs:
       skip_cleanup: true
       api_key: "$NPM_TOKEN"
       on:
-        repo: jirkachadima/gitbook-plugin-link-checker
+        repo: JirkaChadima/gitbook-plugin-link-checker
         tags: true
 env:
   global:
