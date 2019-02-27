@@ -1,10 +1,13 @@
+var path = require('path');
+var fs = require('fs');
+
 var urls = [];
 
 module.exports = {
     hooks: {
       'page:before': function (page) {
-        var config = this.config.get('pluginsConfig')
-          && this.config.get('pluginsConfig')['link-checker'];
+        var config = (this.config.get('pluginsConfig')
+          && this.config.get('pluginsConfig')['link-checker']) || {};
         if (!Array.isArray(config.fqdn)) {
           config.fqdn = [];
         }
@@ -37,6 +40,28 @@ module.exports = {
                   }
                 }
               }
+            }
+          }
+        }
+      },
+      'finish': function () {
+        for (let i = 0; i < urls.length; i++) {
+          var config = (this.config.get('pluginsConfig')
+            && this.config.get('pluginsConfig')['link-checker']) || {};
+          var rawPath = this.getPageByPath(urls[i].origin).rawPath;
+          var basePath = rawPath.replace(urls[i].origin, '');
+          var dirName = path.dirname(urls[i].origin);
+          // links absolute to the book root
+          if (urls[i].link.startsWith('/')) {
+            urls[i].link = urls[i].link.substring(1, urls[i].link.length);
+            dirName = '.';
+          } 
+          if (!fs.existsSync(path.resolve(basePath, dirName, urls[i].link))) {
+            var message = 'Found a link pointing to a non-existent file ' + urls[i].link + ' in ' + urls[i].origin;
+            if (config.dieOnError) {
+              throw new Error(message);
+            } else {
+              this.log.warn(message + '\n');
             }
           }
         }
