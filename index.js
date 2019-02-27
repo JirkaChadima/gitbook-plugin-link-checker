@@ -9,14 +9,13 @@ module.exports = {
           config.fqdn = [];
         }
         var links = page.content.match(/\[([^\[\]]+)\]\(([^()]+)\)/gmi);
-        var urlRegex = /\(([^()]+)\)$/g;
         var domainRegexes = [];
         for (var i = 0; i < config.fqdn.length; i++) {
           domainRegexes.push(new RegExp('^https?://' + config.fqdn, 'gi'));
         }
         if (links) {
           for(var i = 0; i < links.length; i++) {
-            var url = urlRegex.exec(links[i]);
+            var url = (/\(([^()]+)\)$/gmi).exec(links[i]);
             if (url && url.length > 1) {
               // store for dead relative links check
               if (!url[1].match(/^https?:\/\//gi) && url[1].match(/\.md$/gi)) {
