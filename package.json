@@ -18,13 +18,13 @@
     "properties": {
       "fqdn": {
         "type": "array",
-        "default": "[]",
-        "description": "List of domains that the checker should check. If any of those occur in a link, it's bad."
+        "default": [],
+        "title": "List of domains that the checker should check. If any of those occur in a link, it's bad."
       },
       "dieOnError": {
         "type": "boolean",
-        "default": "false",
-        "description": "If set to true, the build will stop, otherwise the plugin will flush only warnings"
+        "default": false,
+        "title": "If set to true, the build will stop, otherwise the plugin will flush only warnings"
       }
     }
   }
