@@ -5,6 +5,9 @@ var urls = [];
 
 module.exports = {
     hooks: {
+      'init': function () {
+        urls = [];
+      },
       'page:before': function (page) {
         var config = (this.config.get('pluginsConfig')
           && this.config.get('pluginsConfig')['link-checker']) || {};
