@@ -46,6 +46,7 @@ module.exports = {
             }
           }
         }
+        return page;
       },
       'finish': function () {
         for (let i = 0; i < urls.length; i++) {
